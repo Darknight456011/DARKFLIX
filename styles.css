@@ -6,6 +6,91 @@ body {
     margin-bottom: 100px;
 }
 
+.wrapper {
+    display: flex;
+    overflow: hidden;
+    min-width: 500px;
+}
+
+.wrapper .texto-estatico {
+    font-size: 40px;
+     color: #ff0000;
+}
+
+.wrapper .texto-dinamico {
+  margin-left: 15px;
+    height: 60px;
+
+}
+
+.wrapper .texto-dinamico li {
+    list-style: none;
+    font-size: 35px;
+    position: relative;
+    color: #a600ff85;
+    top: 0px;
+    animation: slide 8s steps(3) infinite;
+    animation-name: none;
+    animation-duration: 8s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+    margin-left: 10px;
+
+}
+
+@keyframes slide{
+    100%{
+        top: -240px;
+    }
+}
+
+.wrapper .texto-dinamico li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-left: 2px solid #44ff00;
+    animation: typing 2s steps(15) infinite;
+}
+
+@keyframes typing {
+    40%, 60% {
+        left: 105%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+   
+
+.darkflix {
+  font-family: Arial, sans-serif;
+  font-size: 60px;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 20px;
+
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards, neon 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+  }
+}
+
 .search-box {
     position: absolute;
     top: 20px;
@@ -104,7 +189,7 @@ p {
 }
 
 .categoria h2 {
-    color: rgba(66, 241, 110, 0.918);
+    color: rgba(241, 66, 66, 0.918);
 }
 
 .music {
